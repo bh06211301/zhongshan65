@@ -384,6 +384,18 @@ footer .wrap{display:grid; gap:.3rem}
   .t-row{--col:2.7rem; --gap:1.1rem}
   .t-year{font-size:1rem}
   .t-body{padding-left:.7rem}
+  /* 交通路線：手機改成直式路線圖（像乘車路線 App） */
+  .route{grid-template-columns:1fr; gap:.4rem}
+  .route-ic{display:none}
+  .chain{display:grid; gap:0; padding-left:1.6rem}
+  .node{position:relative; display:block; white-space:normal; border:0; background:none; padding:.15rem 0; font-size:var(--s-md); line-height:1.5; color:var(--ink)}
+  .node::before{content:""; position:absolute; left:-1.45rem; top:calc(.15rem + .75em - .4rem); width:.8rem; height:.8rem; box-sizing:border-box; border-radius:50%; border:2px solid var(--accent); background:var(--bg); z-index:1}
+  .node--end{background:none; color:var(--brass)}
+  .node--end::before{background:var(--brass); border-color:var(--brass)}
+  .leg{position:relative; display:block; padding:.3rem 0 .4rem; font-size:var(--s-sm); line-height:1.5; font-weight:500}
+  .leg::after{content:none}
+  .leg::before{content:""; position:absolute; left:calc(-1.45rem + .4rem - 1px); top:-.6rem; bottom:-.6rem; width:2px; background:var(--line)}
+  .total{margin-top:.6rem; padding-top:.6rem; border-top:1px dashed var(--line); font-size:var(--s-sm)}
 }
 </style>
 
