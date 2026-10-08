@@ -397,6 +397,18 @@ footer .wrap{display:grid; gap:.3rem}
   .leg::before{content:""; position:absolute; left:calc(-1.45rem + .4rem - 1px); top:-.6rem; bottom:-.6rem; width:2px; background:var(--line)}
   .total{margin-top:.6rem; padding-top:.6rem; border-top:1px dashed var(--line); font-size:var(--s-sm)}
 }
+
+/* 所有文字靠左對齊（使用者指定） */
+.sec-head{justify-items:start; text-align:left}
+.hero{text-align:left}
+.hero h1{margin-inline:0}
+.hero .lede{margin-inline:0}
+.panel-actions{justify-content:flex-start}
+.map-cap, .takeaway, .disclaimer, .who, .copied{text-align:left}
+.fit{text-align:left; justify-items:start}
+.fit .chips{justify-content:flex-start}
+.contact{text-align:left}
+.routes, .timeline, .contact-card, .trust, .fit{margin-left:0}
 </style>
 
 <header class="nav">
