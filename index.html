@@ -409,6 +409,7 @@ footer .wrap{display:grid; gap:.3rem}
 .fit .chips{justify-content:flex-start}
 .contact{text-align:left}
 .routes, .timeline, .contact-card, .trust, .fit{margin-left:0}
+.field dd small.sub{display:block; margin-left:0}
 .c-addr{font-weight:700; color:var(--ink); line-height:1.5}
 @media (min-width:900px){ .contact-card .c-row.c-row--addr{grid-column:1 / -1; border-left:0; padding-left:0} }
 </style>
@@ -475,7 +476,7 @@ footer .wrap{display:grid; gap:.3rem}
       <div class="panel">
         <dl class="panel-grid">
           <div class="field"><dt data-i18n="f_size">面積</dt><dd><span class="num">21</span><span data-i18n="u_ping">坪</span><small>≈ 69.4㎡</small></dd></div>
-          <div class="field"><dt data-i18n="f_rent">月租</dt><dd>NT$ <span class="num">68,000</span></dd></div>
+          <div class="field"><dt data-i18n="f_rent">月租</dt><dd>NT$ <span class="num">68,000</span><small class="sub" data-i18n="v_mgmt_s">＋管理費 2,800</small></dd></div>
           <div class="field"><dt data-i18n="f_floor">樓層</dt><dd data-i18n="v_floor">1樓 · 電梯大樓</dd></div>
           <div class="field"><dt data-i18n="f_term">租期</dt><dd data-i18n="v_term">最短兩年</dd></div>
           <div class="field"><dt data-i18n="f_move">遷入</dt><dd data-i18n="v_move">隨時可遷入</dd></div>
@@ -975,6 +976,7 @@ footer .wrap{display:grid; gap:.3rem}
         <div><dt data-i18n="s_size">面積</dt><dd data-i18n="s_size_v">21坪（約69.4㎡）</dd></div>
         <div><dt data-i18n="s_floor">樓層</dt><dd data-i18n="s_floor_v">1樓（地上14層電梯大樓）</dd></div>
         <div><dt data-i18n="s_rent">月租</dt><dd data-i18n="s_rent_v">新台幣68,000元</dd></div>
+        <div><dt data-i18n="s_mgmt">管理費</dt><dd data-i18n="s_mgmt_v">每月新台幣2,800元</dd></div>
         <div><dt data-i18n="s_dep">押金</dt><dd data-i18n="s_dep_v">面議</dd></div>
         <div><dt data-i18n="s_term">租期</dt><dd data-i18n="s_term_v">最短兩年</dd></div>
         <div><dt data-i18n="s_move">遷入</dt><dd data-i18n="s_move_v">隨時可遷入</dd></div>
@@ -1166,7 +1168,7 @@ footer .wrap{display:grid; gap:.3rem}
       s_size:"面積", s_size_v:"21坪（約69.4㎡）",
       s_floor:"階数", s_floor_v:"1階（地上14階建て・エレベーター付き）",
       s_rent:"月額賃料", s_rent_v:"68,000台湾ドル",
-      s_dep:"保証金", s_dep_v:"応相談",
+      s_mgmt:"管理費", s_mgmt_v:"月額2,800台湾ドル", v_mgmt_s:"＋管理費 2,800", s_dep:"保証金", s_dep_v:"応相談",
       s_term:"契約期間", s_term_v:"最短2年",
       s_move:"入居時期", s_move_v:"即入居可",
       s_int:"内装", s_int_v:"高級内装済み、間仕切り不可",
@@ -1289,7 +1291,7 @@ footer .wrap{display:grid; gap:.3rem}
       s_size:"Size", s_size_v:"21 ping (approx. 69.4 m²)",
       s_floor:"Floor", s_floor_v:"Ground floor of a 14-storey elevator building",
       s_rent:"Monthly rent", s_rent_v:"NT$68,000",
-      s_dep:"Deposit", s_dep_v:"Negotiable",
+      s_mgmt:"Management fee", s_mgmt_v:"NT$2,800 per month", v_mgmt_s:"+ mgmt. fee 2,800", s_dep:"Deposit", s_dep_v:"Negotiable",
       s_term:"Lease term", s_term_v:"2 years minimum",
       s_move:"Move-in", s_move_v:"Available now",
       s_int:"Interior", s_int_v:"High-end fit-out; no partitioning",
