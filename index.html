@@ -9,6 +9,8 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://bh06211301.github.io/zhongshan65/web-images/storefront-1.jpg">
 <meta name="format-detection" content="telephone=no">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#ffffff">
 <title>中山北路二段65巷店面</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,24 +38,18 @@
   --wrap:1080px;
   --gutter:clamp(16px,4vw,32px);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#11161B; --surface:#192027; --line:#2B343D; --ink:#E7EAED; --ink-soft:#A2ACB5;
-    --accent:#9DBADB; --on-accent:#0F1A26; --brass:#CDAA74; --brass-tint:#2A241B;
-    --shadow:0 6px 24px rgba(0,0,0,.35);
-    --map-bg:#161C22; --road:#2C353F; --park:#23331F; --mrt:#E0646C; --site:#2A241B;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#11161B; --surface:#192027; --line:#2B343D; --ink:#E7EAED; --ink-soft:#A2ACB5;
-  --accent:#9DBADB; --on-accent:#0F1A26; --brass:#CDAA74; --brass-tint:#2A241B;
-  --shadow:0 6px 24px rgba(0,0,0,.35);
-  --map-bg:#161C22; --road:#2C353F; --park:#23331F; --mrt:#E0646C; --site:#2A241B;
-  color-scheme:dark;
-}
+:root{color-scheme:only light}
 
 *{box-sizing:border-box}
+@media (max-width:600px){
+  html{font-size:112.5%}
+  :root{--s-xs:.8125rem; --s-sm:.9375rem}
+  .map svg .lbl{font-size:25px}
+  .map svg .lbl-sm{font-size:20px}
+  .map svg .road-lbl{font-size:18px}
+  .map svg .min{font-size:22px}
+  .map svg .store-lbl{font-size:28px}
+}
 body{background:var(--bg); color:var(--ink); font-family:var(--font-sans); font-size:var(--s-md); line-height:1.8; -webkit-font-smoothing:antialiased}
 :lang(ja) body, body:lang(ja){font-family:var(--font-sans-ja)}
 h1,h2,h3{margin:0; font-weight:700; line-height:1.45; text-wrap:balance; overflow-wrap:anywhere}
@@ -984,7 +980,7 @@ footer .wrap{display:grid; gap:.3rem}
       tr3_h:"オーナーが日本語で対応", tr3_p:"オーナー本人が日本語で対応しますので、内見や契約のご相談に通訳は必要ありません。",
       tr_foot:"お手続きの面は、どうぞご安心ください。",
       s_contract:"契約", s_contract_v:"第三者の公証人による公証", s_lang:"対応言語", s_lang_v:"日本語・中国語",
-      w_lv:"ルイ・ヴィトン台北中山旗艦店", w_lv_d:"中山北路二段47号、4フロアの「ルイ・ヴィトン ビル」。", m_lv:"ルイ・ヴィトン", m_4:"徒歩約4分",
+      w_lv:"ルイ・ヴィトン台北中山旗艦店", w_lv_d:"中山北路二段47号、4フロアの「ルイ・ヴィトン ビル」。", m_lv:"LV旗艦店", m_4:"徒歩約4分",
       mark:"中山北路二段65巷", mark_sub:"1階店舗 · オーナー直接契約",
       nav_why:"特長", nav_around:"周辺マップ", nav_history:"中山北路", nav_before:"前テナント", nav_spec:"物件概要", nav_cta:"内見を予約",
       hero_eyebrow:"台湾の展示会に出展されたブランドの皆さまへ",
@@ -1031,9 +1027,9 @@ footer .wrap{display:grid; gap:.3rem}
       n_cities:"台中・高雄など", l_hsr:"台湾高速鉄道　台中から約1時間／左営から約1.5時間", t_hsr:"高速鉄道・在来線・MRTが台北駅に集まるので、台湾各地の取引先とも会いやすい立地です",
       n_tsa:"台北松山空港", l_taxi:"タクシー　約15分", t_tsa:"松山空港は東京・羽田との便があり、日本からの出張にも便利です",
       m_title:"中山北路二段65巷 周辺地図", m_rd_msw:"民生西路", m_rd_mse:"民生東路", m_rd_njw:"南京西路", m_rd_nje:"南京東路", m_rd_zs:"中山北路二段", m_rd_ls:"林森北路", m_lane:"65巷",
-      m_park:"線形公園「心中山」", m_sl_area:"双連エリア・双連朝市", m_cf:"赤峰街", m_7:"徒歩約7分", m_5:"徒歩約5分", m_6:"徒歩約6分", m_8:"徒歩約8分", m_2:"徒歩約2分",
+      m_park:"線形公園「心中山」", m_sl_area:"双連エリア・双連朝市", m_cf:"赤峰街", m_7:"約7分", m_5:"徒歩約5分", m_6:"徒歩約6分", m_8:"徒歩約8分", m_2:"徒歩約2分",
       m_sl:"MRT双連駅", m_zs:"MRT中山駅", m_zs_area:"南西エリア", m_bus:"バス停「華泰飯店」",
-      m_palace:"アンバサダーパレスホテル", m_palace2:"隣接・2028年開業予定", m_regent:"リージェント台北", m_royal:"ホテルロイヤル台北", m_okura:"オークラ プレステージ台北", m_store:"本物件",
+      m_palace:"アンバサダーパレスホテル", m_palace2:"隣接・2028年開業予定", m_regent:"リージェント台北", m_royal:"ホテルロイヤル台北", m_okura:"オークラ台北", m_store:"本物件",
       m_cap:"位置関係を示す概略図です（地図座標をもとに作成）。分数は本物件からの徒歩の目安です。",
       w_palace:"アンバサダーパレスホテル台北", w_palace_s:"國賓皇宮酒店 · 建設中", w_palace_m:"隣接", w_palace_d:"パレスホテル東京との共同ブランド。2028年開業予定。",
       w_pre:"約", w_unit:"分",
@@ -1156,7 +1152,7 @@ footer .wrap{display:grid; gap:.3rem}
       m_title:"Map of the area around Lane 65, Zhongshan N. Rd.", m_rd_msw:"Minsheng W. Rd.", m_rd_mse:"Minsheng E. Rd.", m_rd_njw:"Nanjing W. Rd.", m_rd_nje:"Nanjing E. Rd.", m_rd_zs:"Zhongshan N. Rd. Sec. 2", m_rd_ls:"Linsen N. Rd.", m_lane:"Lane 65",
       m_park:"Linear Park", m_sl_area:"Shuanglian area & morning market", m_cf:"Chifeng St.", m_7:"7 min", m_5:"5 min", m_6:"6 min", m_8:"8 min", m_2:"2 min",
       m_sl:"Shuanglian MRT", m_zs:"Zhongshan MRT", m_zs_area:"Nanxi shopping area", m_bus:"Huatai Hotel bus stop",
-      m_palace:"Ambassador Palace Hotel", m_palace2:"Next door · opening 2028", m_regent:"Regent Taipei", m_royal:"Hotel Royal Taipei", m_okura:"Okura Prestige Taipei", m_store:"This storefront",
+      m_palace:"Ambassador Palace Hotel", m_palace2:"Next door · opening 2028", m_regent:"Regent Taipei", m_royal:"Hotel Royal Taipei", m_okura:"Okura Prestige", m_store:"This storefront",
       m_cap:"Schematic map drawn from map coordinates. Minutes are estimated walking times from the storefront.",
       w_palace:"Ambassador Palace Hotel Taipei", w_palace_s:"Under construction", w_palace_m:"Next door", w_palace_d:"Co-branded with Palace Hotel Tokyo, scheduled to open in 2028.",
       w_pre:"", w_unit:" min",
