@@ -97,6 +97,10 @@ figure{margin:0}
 .jump-list a:hover{color:var(--accent); border-color:var(--accent)}
 .jump-list a[aria-current="true"]{background:var(--accent); border-color:var(--accent); color:var(--on-accent)}
 [id]{scroll-margin-top:7.5rem}
+@media (max-width:600px){
+  .nav{top:calc(var(--nav-in-h, 0px) * -1)}
+  [id]{scroll-margin-top:4.2rem}
+}
 .totop[hidden]{display:none}
 .totop{position:fixed; right:max(16px, env(safe-area-inset-right, 0px)); bottom:calc(16px + env(safe-area-inset-bottom, 0px)); z-index:30; width:2.8rem; height:2.8rem; border-radius:50%; display:grid; place-items:center; background:var(--accent); color:var(--on-accent); text-decoration:none; font-size:1.2rem; box-shadow:var(--shadow)}
 
@@ -382,6 +386,16 @@ footer .wrap{display:grid; gap:.3rem}
     </div>
   </nav>
 </header>
+<script>
+  // 手機版：上方店名與語言列會隨捲動滑走，只留跳轉列固定在最上面
+  (function(){
+    var inner = document.querySelector('.nav-in');
+    function setH(){ document.documentElement.style.setProperty('--nav-in-h', inner.offsetHeight + 'px'); }
+    setH();
+    window.addEventListener('resize', setH);
+    if (window.ResizeObserver) new ResizeObserver(setH).observe(inner);
+  })();
+</script>
 <a class="totop" href="#top" id="totop" hidden aria-label="回到頂端" data-i18n-aria="aria_totop">↑</a>
 
 <main id="top">
