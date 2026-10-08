@@ -335,13 +335,22 @@ figure{margin:0}
 .contact{text-align:center}
 .contact-card{max-width:620px; margin:0 auto; background:var(--bg); border:1px solid var(--line); border-radius:6px; box-shadow:var(--shadow); padding:clamp(1.2rem,4vw,2rem); display:grid; gap:1rem; text-align:left}
 .who{font-size:var(--s-sm); color:var(--ink-soft); text-align:center}
-.c-row{display:grid; grid-template-columns:minmax(0,1fr); gap:.45rem; align-items:center; padding-top:1rem; border-top:1px solid var(--line)}
+.c-row{display:grid; grid-template-columns:minmax(0,1fr); gap:.45rem; align-items:center; align-content:start; padding-top:1rem; border-top:1px solid var(--line)}
 .c-label{grid-column:1 / -1; font-size:var(--s-xs); font-weight:700; letter-spacing:.08em; color:var(--ink-soft)}
 .c-value{font-family:var(--font-num); font-size:clamp(1.35rem,5vw,1.9rem); color:var(--accent); letter-spacing:.02em; user-select:all; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; min-width:0; line-height:1.3}
 .c-value--mail{font-family:var(--font-sans); font-weight:700; font-size:clamp(1.05rem,4.2vw,1.45rem); letter-spacing:0}
 .c-note{grid-column:1 / -1; font-size:var(--s-xs); color:var(--ink-soft)}
 .c-actions{display:flex; gap:.5rem; flex-wrap:wrap}
 .copied{font-size:var(--s-xs); color:var(--brass); min-height:1.2em; text-align:center}
+@media (min-width:900px){
+  .contact-card{max-width:900px; align-items:start; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); column-gap:2rem}
+  .contact-card .who, .contact-card .copied{grid-column:1 / -1}
+  .contact-card .c-row + .c-row{border-left:1px solid var(--line); padding-left:2rem}
+}
+@media (max-width:899px){
+  .contact-card{gap:.6rem}
+  .c-row{padding-top:.8rem; gap:.35rem}
+}
 .more{margin-top:1.4rem; font-size:var(--s-sm); color:var(--ink-soft)}
 .more a{color:var(--accent)}
 
