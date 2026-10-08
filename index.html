@@ -254,13 +254,13 @@ figure{margin:0}
 
 /* 時間軸 */
 .timeline{list-style:none; margin:0 auto; padding:0; display:grid; max-width:860px}
-.t-row{display:grid; grid-template-columns:5.6rem minmax(0,1fr); gap:1.1rem; position:relative; padding-bottom:2rem}
-.t-row::before{content:""; position:absolute; left:calc(5.6rem + .55rem); top:.75rem; bottom:-.2rem; width:1px; background:var(--line)}
+.t-row{--col:5.6rem; --gap:1.8rem; --dot:13px; --lw:1px; display:grid; grid-template-columns:var(--col) minmax(0,1fr); gap:var(--gap); position:relative; padding-bottom:2rem}
+.t-row::before{content:""; position:absolute; left:calc(var(--col) + var(--gap) / 2 - var(--lw) / 2); top:calc(.62rem + var(--dot) / 2); bottom:calc(-.62rem - var(--dot) / 2); width:var(--lw); background:var(--line)}
 .t-row:last-child::before{display:none}
 .t-year{font-family:var(--font-num); font-size:1.45rem; color:var(--accent); line-height:1.3; text-align:right; font-variant-numeric:lining-nums}
 .t-year small{display:block; font-family:var(--font-sans); font-size:var(--s-xs); color:var(--ink-soft); font-weight:500}
 .t-body{padding-left:1.3rem; position:relative; display:grid; gap:.25rem; min-width:0}
-.t-body::before{content:""; position:absolute; left:-.62rem; top:.62rem; width:9px; height:9px; border-radius:50%; background:var(--bg); border:2px solid var(--accent)}
+.t-body::before{content:""; position:absolute; z-index:1; box-sizing:border-box; left:calc(var(--gap) / -2 - var(--dot) / 2); top:.62rem; width:var(--dot); height:var(--dot); border-radius:50%; background:var(--bg); border:2px solid var(--accent)}
 .t-body h3{font-size:var(--s-md)}
 .t-body p{font-size:var(--s-sm); color:var(--ink-soft)}
 .t-fig{margin-top:.8rem; max-width:520px}
@@ -274,12 +274,11 @@ figure{margin:0}
 .t-row--now .t-year, .t-row--next .t-year{color:var(--brass)}
 .t-row--now .t-body::before{background:var(--brass); border-color:var(--brass)}
 .t-row--next .t-body::before{border-color:var(--brass)}
-.t-row--now::before{background:var(--brass); width:3px; left:calc(5.6rem + .45rem)}
+.t-row--now{--lw:3px}
+.t-row--now::before{background:var(--brass)}
 .now-pill{display:inline-block; font-size:var(--s-xs); font-weight:700; color:var(--bg); background:var(--brass); border-radius:999px; padding:.05rem .6rem; margin-left:.4rem; vertical-align:2px; letter-spacing:.04em}
 @media (max-width:460px){
-  .t-row{grid-template-columns:3.6rem minmax(0,1fr); gap:.8rem}
-  .t-row::before{left:calc(3.6rem + .25rem)}
-  .t-row--now::before{left:calc(3.6rem + .15rem)}
+  .t-row{--col:3.4rem; --gap:1.4rem}
   .t-year{font-size:1.15rem}
   .t-body{padding-left:1rem}
     .t-figs{grid-template-columns:1fr}
