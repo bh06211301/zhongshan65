@@ -183,6 +183,14 @@ figure{margin:0}
 .map .min{font-size:18px; fill:var(--accent); font-weight:700}
 .map .min-next{fill:var(--brass)}
 .map .store-lbl{font-size:23px; font-weight:700; fill:var(--brass)}
+@media (min-width:980px){
+  .map-split{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); column-gap:clamp(2rem,3.5vw,3rem); align-items:stretch}
+  .map-col{grid-column:1; grid-row:1}
+  .map-col > .map{position:sticky; top:7.5rem; margin:0; max-width:none}
+  .map-col > .map svg{max-height:calc(100vh - 7.5rem - 4.5rem)}
+  .map-split > .around{grid-column:2; grid-row:1; grid-template-columns:minmax(0,1fr); gap:2rem; align-self:start}
+  .map-split > .routes{grid-column:1 / -1; grid-row:2; margin-top:clamp(2.4rem,4vw,3.2rem)}
+}
 .map-cap{font-size:var(--s-xs); color:var(--ink-soft); text-align:center; padding:.5rem .8rem .7rem; border-top:1px solid var(--line); background:var(--bg)}
 
 /* 影片區塊 */
@@ -484,6 +492,8 @@ footer .wrap{display:grid; gap:.3rem}
           <p data-i18n="v2_p">沿著中山北路的林蔭大道，經過國賓皇宮酒店的工地圍籬，轉進65巷就到大樓門口。隔壁就是2028年要開幕的酒店，影片裡看得最清楚。</p>
         </div>
       </div>
+      <div class="map-split">
+      <div class="map-col">
       <figure class="map">
         <svg viewBox="100 30 720 770" role="img" aria-labelledby="map-title">
           <title id="map-title" data-i18n="m_title">中山北路二段65巷周邊位置圖</title>
@@ -578,6 +588,7 @@ footer .wrap{display:grid; gap:.3rem}
         </svg>
         <figcaption class="map-cap" data-i18n="m_cap">位置示意圖，依地圖座標繪製。分鐘數為從本物件步行的估計時間。</figcaption>
       </figure>
+      </div>
       <div class="routes" id="routes">
         <div class="routes-head">
           <h3 data-i18n="rt_h">從機場和台灣各地過來</h3>
@@ -681,6 +692,7 @@ footer .wrap{display:grid; gap:.3rem}
             </ul>
           </div>
         </div>
+      </div>
       </div>
       <div class="cf" id="chifeng">
         <div class="carousel" data-carousel>
