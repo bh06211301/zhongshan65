@@ -409,6 +409,8 @@ footer .wrap{display:grid; gap:.3rem}
 .fit .chips{justify-content:flex-start}
 .contact{text-align:left}
 .routes, .timeline, .contact-card, .trust, .fit{margin-left:0}
+.c-addr{font-weight:700; color:var(--ink); line-height:1.5}
+@media (min-width:900px){ .contact-card .c-row.c-row--addr{grid-column:1 / -1; border-left:0; padding-left:0} }
 </style>
 
 <header class="nav">
@@ -804,7 +806,6 @@ footer .wrap{display:grid; gap:.3rem}
       </div>
       <div class="around-foot">
         <p data-i18n="ar_note">步行時間依地圖距離估算，實際依行走路線而定。機場捷運與高鐵時間依公開時刻表，松山機場車程依國賓皇宮酒店官方資料，實際依班次與路況而定。</p>
-        <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E4%B8%AD%E5%B1%B1%E5%8C%97%E8%B7%AF%E4%BA%8C%E6%AE%B565%E5%B7%B7" target="_blank" rel="noopener" data-i18n="btn_map">在 Google 地圖開啟</a>
       </div>
     </div>
   </section>
@@ -1035,6 +1036,11 @@ footer .wrap{display:grid; gap:.3rem}
             <a class="btn btn--solid btn--sm" href="tel:+886939260900" data-i18n="btn_call">撥打電話</a>
           </span>
           <span class="c-note" data-i18n="phone_alt">從海外撥打：+886 939-260-900</span>
+        </div>
+        <div class="c-row c-row--addr">
+          <span class="c-label" data-i18n="s_addr">地址</span>
+          <span class="c-addr" data-i18n="s_addr_v">台北市中山區中山北路二段65巷（國賓SMART大樓）</span>
+          <span class="c-actions"><a class="btn btn--ghost btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E4%B8%AD%E5%B1%B1%E5%8C%97%E8%B7%AF%E4%BA%8C%E6%AE%B565%E5%B7%B7" target="_blank" rel="noopener" data-i18n="btn_map">在 Google 地圖開啟</a></span>
         </div>
         <span class="copied" id="copied" aria-live="polite"></span>
       </div>
