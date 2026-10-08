@@ -14,7 +14,7 @@
 <title>中山北路二段65巷店面</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+TC:wght@600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&family=Zen+Old+Mincho:wght@700&family=Cormorant+Garamond:wght@600;700&display=swap">
 <style>
 /* Layout: 三井式招商頁縮小版 — sticky 導覽 / 置中 Hero + 照片三聯 + 條件面板 / 四張理由卡 / 周邊步行分鐘條 / 時間軸（含照片、租期標示）/ 前租客 + 適合品牌 / 規格 / 雙 CTA */
 :root{
@@ -53,6 +53,12 @@
 body{background:var(--bg); color:var(--ink); font-family:var(--font-sans); font-size:var(--s-md); line-height:1.8; -webkit-font-smoothing:antialiased}
 :lang(ja) body, body:lang(ja){font-family:var(--font-sans-ja)}
 h1,h2,h3{margin:0; font-weight:700; line-height:1.45; text-wrap:balance; overflow-wrap:anywhere}
+/* 標題：明朝體＋字距拉開（雜誌封面感） */
+:root{--font-display:'Noto Serif TC','Songti TC','PMingLiU',serif; --font-display-ja:'Zen Old Mincho','Noto Serif TC','Hiragino Mincho ProN','Yu Mincho',serif; --font-display-en:'Cormorant Garamond','Noto Serif TC',Georgia,serif}
+.hero h1, .sec-head h2, .summary h2, .vtext h3, .cf-text h3, .routes-head h3{font-family:var(--font-display); font-weight:600; letter-spacing:.1em; line-height:1.55}
+.hero h1{letter-spacing:.12em}
+:lang(ja) .hero h1, :lang(ja) .sec-head h2, :lang(ja) .summary h2, :lang(ja) .vtext h3, :lang(ja) .cf-text h3, :lang(ja) .routes-head h3{font-family:var(--font-display-ja); font-weight:700; letter-spacing:.08em}
+:lang(en) .hero h1, :lang(en) .sec-head h2, :lang(en) .summary h2, :lang(en) .vtext h3, :lang(en) .cf-text h3, :lang(en) .routes-head h3{font-family:var(--font-display-en); font-weight:700; letter-spacing:.01em; line-height:1.25}
 :lang(ja) h1, :lang(ja) h2, :lang(ja) h3{word-break:auto-phrase}
 p{margin:0}
 a{color:inherit}
