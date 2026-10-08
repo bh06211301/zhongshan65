@@ -283,6 +283,9 @@ figure{margin:0}
 .t-body h3{font-size:var(--s-md)}
 .t-body p{font-size:var(--s-sm); color:var(--ink-soft)}
 .t-fig{margin-top:.8rem; max-width:520px}
+.t-car{margin-top:.8rem; max-width:520px}
+.t-car img{width:100%; aspect-ratio:3/2; object-fit:cover; display:block; background:var(--surface)}
+.t-car img.pos-top{object-position:center 30%}
 .t-fig img{width:100%; aspect-ratio:3/2; object-fit:cover; border-radius:4px; background:var(--bg)}
 .t-fig--old img{filter:grayscale(.2) sepia(.15)}
 .t-figs{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:10px; margin-top:.8rem}
@@ -337,7 +340,7 @@ figure{margin:0}
 .who{font-size:var(--s-sm); color:var(--ink-soft); text-align:center}
 .c-row{display:grid; grid-template-columns:minmax(0,1fr); gap:.45rem; align-items:center; align-content:start; padding-top:1rem; border-top:1px solid var(--line)}
 .c-label{grid-column:1 / -1; font-size:var(--s-xs); font-weight:700; letter-spacing:.08em; color:var(--ink-soft)}
-.c-value{font-family:var(--font-num); font-size:clamp(1.35rem,5vw,1.9rem); color:var(--accent); letter-spacing:.02em; user-select:all; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; min-width:0; line-height:1.3}
+.c-value{font-family:var(--font-sans); font-weight:700; font-size:clamp(1.05rem,4.2vw,1.45rem); color:var(--accent); letter-spacing:.01em; user-select:all; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; min-width:0; line-height:1.3}
 .c-value--mail{font-family:var(--font-sans); font-weight:700; font-size:clamp(1.05rem,4.2vw,1.45rem); letter-spacing:0}
 .c-note{grid-column:1 / -1; font-size:var(--s-xs); color:var(--ink-soft)}
 .c-actions{display:flex; gap:.5rem; flex-wrap:wrap}
@@ -359,6 +362,22 @@ footer .wrap{display:grid; gap:.3rem}
 
 @media (prefers-reduced-motion:no-preference){
   .btn, .lang button, .nav-links a{transition:background-color .15s, color .15s}
+}
+
+/* 手機版：縮小左右留白（放在最後，覆蓋前面的設定） */
+@media (max-width:600px){
+  :root{--gutter:12px}
+  .sum-list a{grid-template-columns:1.5rem minmax(0,1fr) auto; gap:.55rem; padding:.7rem .75rem}
+  .panel{padding:1rem .85rem}
+  .reason{padding:1.1rem .95rem 1.2rem}
+  .vblock, .cf{padding:.8rem}
+  .route{padding:.9rem .85rem; gap:.7rem}
+  .tenant-note{padding:.8rem .85rem}
+  .trust{padding:1rem .9rem}
+  .contact-card{padding:1rem .9rem}
+  .t-row{--col:2.7rem; --gap:1.1rem}
+  .t-year{font-size:1rem}
+  .t-body{padding-left:.7rem}
 }
 </style>
 
@@ -829,6 +848,22 @@ footer .wrap{display:grid; gap:.3rem}
           <div class="t-body">
             <h3><span data-i18n="t2026_h">65巷店面招租中</span><span class="now-pill" data-i18n="now">現在</span></h3>
             <p data-i18n="t2026_p">今天的中山北路上，有四層樓的路易威登（LV）台北中山旗艦店，晶華酒店的麗晶精品也有 Chanel 等國際精品。隔壁工地持續施工，這間店面正在找下一個品牌。</p>
+            <div class="carousel t-car" data-carousel>
+              <div class="car-view">
+                <div class="car-track" tabindex="0" aria-label="中山北路的飯店與精品" data-i18n-aria="aria_t26car">
+                  <figure class="car-slide"><img src="web-images/regent-park.jpg" alt="台北晶華酒店外觀" data-i18n-alt="alt_t26a"></figure>
+                  <figure class="car-slide"><img src="web-images/regent-arcade.jpg" alt="晶華酒店地下的麗晶精品" data-i18n-alt="alt_t26b"></figure>
+                  <figure class="car-slide"><img class="pos-top" src="web-images/royal.jpg" alt="台北老爺大酒店外觀" data-i18n-alt="alt_t26c"></figure>
+                </div>
+                <button type="button" class="car-btn car-prev" aria-label="上一張">‹</button>
+                <button type="button" class="car-btn car-next" aria-label="下一張">›</button>
+                <span class="car-count" aria-hidden="true">1 / 3</span>
+              </div>
+              <div class="car-dots" role="group" aria-label="照片"></div>
+              <p class="credit car-cap" data-i18n="cap_t26a">台北晶華酒店，從康樂公園望去。攝影：陳慶良／Wikimedia Commons（CC BY-SA 4.0）</p>
+              <p class="credit car-cap" data-i18n="cap_t26b" hidden>晶華酒店地下的麗晶精品。攝影：Wpcpey／Wikimedia Commons（CC BY 4.0）</p>
+              <p class="credit car-cap" data-i18n="cap_t26c" hidden>台北老爺大酒店。攝影：阿道／Wikimedia Commons（CC BY-SA 4.0）</p>
+            </div>
           </div>
         </li>
         <li class="t-row t-row--next">
@@ -982,7 +1017,7 @@ footer .wrap{display:grid; gap:.3rem}
   <div class="wrap">
     <span data-i18n="ft1">中山北路二段65巷 一樓店面招租 · 資料更新於2026年10月</span>
     <span data-i18n="ft2">國賓皇宮酒店的開幕時間與設計資訊整理自三菱地所設計、Palace Hotel Tokyo 公開資料，實際以官方公告為準。</span>
-    <span data-i18n="ft3">圖片來源：歷史照片 Wikimedia Commons（公有領域）；國賓大飯店舊照 Tatler Asia；赤峰街 玄史生（CC0）；心中山線形公園 Wpcpey（CC BY 4.0）；誠品R79 ThomasYehYeh（CC BY-SA 4.0）；台北之家照片 公有領域；中山北路林蔭大道與圓山大飯店 臺北市政府工務局公園路燈工程管理處；國賓皇宮酒店模擬圖 三菱地所設計。</span>
+    <span data-i18n="ft3">圖片來源：歷史照片 Wikimedia Commons（公有領域）；國賓大飯店舊照 Tatler Asia；赤峰街 玄史生（CC0）；晶華酒店 陳慶良（CC BY-SA 4.0）、Wpcpey（CC BY 4.0）；老爺大酒店 阿道（CC BY-SA 4.0）；心中山線形公園 Wpcpey（CC BY 4.0）；誠品R79 ThomasYehYeh（CC BY-SA 4.0）；台北之家照片 公有領域；中山北路林蔭大道與圓山大飯店 臺北市政府工務局公園路燈工程管理處；國賓皇宮酒店模擬圖 三菱地所設計。</span>
   </div>
 </footer>
 
@@ -1073,7 +1108,7 @@ footer .wrap{display:grid; gap:.3rem}
       alt_amb:"かつての国賓大飯店と中山北路の街並み", cap_amb:"かつての国賓大飯店。台湾初の民間五つ星ホテルです。画像：Tatler Asia",
       t2010_h:"安倍晋三元首相が宿泊", t2010_p:"訪台した安倍晋三元首相が国賓大飯店に宿泊し、ホテルで台湾の政界関係者と会談しました。",
       t2022_h:"旧館が営業を終え、建て替えへ", t2022_p:"国賓大飯店の旧館が営業を終了し、敷地は建て替え工事に入りました。",
-      t2026_h:"65巷の店舗、テナント募集中", now:"いま", t2026_p:"今の中山北路には、4フロアのルイ・ヴィトン台北中山旗艦店があり、リージェント台北のリージェント・ギャラリアにもシャネルなどの高級ブランドが入っています。隣では工事が続き、この店舗は次のブランドを待っています。",
+      t2026_h:"65巷の店舗、テナント募集中", now:"いま", alt_t26a:"リージェント台北の外観", alt_t26b:"リージェント台北地下のブティックアーケード", alt_t26c:"ホテルロイヤル台北の外観", aria_t26car:"中山北路のホテルと高級ブランド", cap_t26a:"リージェント台北（康楽公園側から）。撮影：陳慶良／Wikimedia Commons（CC BY-SA 4.0）", cap_t26b:"リージェント台北地下のブティックアーケード「麗晶精品」。撮影：Wpcpey／Wikimedia Commons（CC BY 4.0）", cap_t26c:"ホテルロイヤル台北（老爺大酒店）。撮影：阿道／Wikimedia Commons（CC BY-SA 4.0）", t2026_p:"今の中山北路には、4フロアのルイ・ヴィトン台北中山旗艦店があり、リージェント台北のリージェント・ギャラリアにもシャネルなどの高級ブランドが入っています。隣では工事が続き、この店舗は次のブランドを待っています。",
       t2028_q:"予定", t2028_h:"アンバサダーパレスホテル台北 開業",
       t2028_p:"パレスホテル東京との共同ブランド。建築設計は三菱地所設計、インテリアデザインはロンドンのG.A Group。地上23階、高さ約92m。",
       alt_p1:"アンバサダーパレスホテル台北の外観イメージ", alt_p2:"中山北路側の低層部外観イメージ",
@@ -1109,7 +1144,7 @@ footer .wrap{display:grid; gap:.3rem}
       more_591:"そのほかの写真・動画：", more_591_link:"591 物件ページ（R21788076・中国語）",
       ft1:"中山北路二段65巷 1階店舗 テナント募集 · 2026年10月更新",
       ft2:"アンバサダーパレスホテル台北の開業時期・設計情報は、三菱地所設計およびパレスホテル東京の公開情報に基づきます。最新情報は公式発表をご確認ください。",
-      ft3:"画像：歴史写真 Wikimedia Commons（パブリックドメイン）／国賓大飯店の写真 Tatler Asia／赤峰街 玄史生（CC0）／線形公園 Wpcpey（CC BY 4.0）／誠品R79 ThomasYehYeh（CC BY-SA 4.0）／台北之家 パブリックドメイン／中山北路の並木・圓山大飯店 台北市政府工務局公園路灯工程管理処／アンバサダーパレスホテル台北イメージ 三菱地所設計",
+      ft3:"画像：歴史写真 Wikimedia Commons（パブリックドメイン）／国賓大飯店の写真 Tatler Asia／赤峰街 玄史生（CC0）／リージェント台北 陳慶良（CC BY-SA 4.0）・Wpcpey（CC BY 4.0）／ホテルロイヤル台北 阿道（CC BY-SA 4.0）／線形公園 Wpcpey（CC BY 4.0）／誠品R79 ThomasYehYeh（CC BY-SA 4.0）／台北之家 パブリックドメイン／中山北路の並木・圓山大飯店 台北市政府工務局公園路灯工程管理処／アンバサダーパレスホテル台北イメージ 三菱地所設計",
       copied:"コピーしました", copy_fail:"選択しました。長押しでコピーしてください"
     },
     en: {
@@ -1196,7 +1231,7 @@ footer .wrap{display:grid; gap:.3rem}
       alt_amb:"The Ambassador Hotel and Zhongshan N. Rd. in earlier years", cap_amb:"The Ambassador Hotel in its early years, Taiwan's first privately owned five-star hotel. Image: Tatler Asia",
       t2010_h:"Shinzo Abe stays at the Ambassador", t2010_p:"Former Japanese prime minister Shinzo Abe stayed at the Ambassador Hotel during his visit to Taiwan and met Taiwanese political leaders at the hotel.",
       t2022_h:"The original hotel closes for rebuilding", t2022_p:"The old Ambassador Hotel closed, and the site entered redevelopment.",
-      t2026_h:"Storefront on Lane 65 available", now:"Now", t2026_p:"Today Zhongshan N. Rd. is home to Louis Vuitton's four-storey Taipei Zhongshan flagship, and the Regent Galleria at the Regent Taipei houses Chanel and other luxury brands. Construction continues next door, and this storefront is looking for its next brand.",
+      t2026_h:"Storefront on Lane 65 available", now:"Now", alt_t26a:"Regent Taipei exterior", alt_t26b:"Boutique arcade beneath the Regent Taipei", alt_t26c:"Hotel Royal Taipei exterior", aria_t26car:"Hotels and luxury boutiques on Zhongshan N. Rd.", cap_t26a:"Regent Taipei, seen from Kangle Park. Photo: 陳慶良 / Wikimedia Commons (CC BY-SA 4.0)", cap_t26b:"Regent Galleria, the boutique arcade beneath the Regent Taipei. Photo: Wpcpey / Wikimedia Commons (CC BY 4.0)", cap_t26c:"Hotel Royal Taipei. Photo: 阿道 / Wikimedia Commons (CC BY-SA 4.0)", t2026_p:"Today Zhongshan N. Rd. is home to Louis Vuitton's four-storey Taipei Zhongshan flagship, and the Regent Galleria at the Regent Taipei houses Chanel and other luxury brands. Construction continues next door, and this storefront is looking for its next brand.",
       t2028_q:"scheduled", t2028_h:"Ambassador Palace Hotel Taipei opens",
       t2028_p:"Co-branded with Palace Hotel Tokyo. Architecture by Mitsubishi Jisho Design, interiors by London's G.A Group; 23 storeys and about 92 m tall.",
       alt_p1:"Exterior rendering of the Ambassador Palace Hotel Taipei", alt_p2:"Rendering of the podium along Zhongshan N. Rd.",
@@ -1232,7 +1267,7 @@ footer .wrap{display:grid; gap:.3rem}
       more_591:"More photos and video: ", more_591_link:"591 listing (R21788076, in Chinese)",
       ft1:"Lane 65, Zhongshan N. Rd. Sec. 2 · ground-floor storefront for lease · updated October 2026",
       ft2:"Opening date and design information for the Ambassador Palace Hotel Taipei come from Mitsubishi Jisho Design and Palace Hotel Tokyo public releases; please refer to official sources for the latest information.",
-      ft3:"Images: historical photo, Wikimedia Commons (public domain); Ambassador Hotel, Tatler Asia; Chifeng Street, 玄史生 (CC0); Linear Park, Wpcpey (CC BY 4.0); Eslite R79, ThomasYehYeh (CC BY-SA 4.0); Taipei Film House, public domain; Zhongshan N. Rd. trees and Grand Hotel, Taipei City Government Parks and Street Lights Office; Ambassador Palace Hotel renderings, Mitsubishi Jisho Design.",
+      ft3:"Images: historical photo, Wikimedia Commons (public domain); Ambassador Hotel, Tatler Asia; Chifeng Street, 玄史生 (CC0); Regent Taipei, 陳慶良 (CC BY-SA 4.0) and Wpcpey (CC BY 4.0); Hotel Royal Taipei, 阿道 (CC BY-SA 4.0); Linear Park, Wpcpey (CC BY 4.0); Eslite R79, ThomasYehYeh (CC BY-SA 4.0); Taipei Film House, public domain; Zhongshan N. Rd. trees and Grand Hotel, Taipei City Government Parks and Street Lights Office; Ambassador Palace Hotel renderings, Mitsubishi Jisho Design.",
       copied:"Copied", copy_fail:"Selected. Press and hold to copy."
     }
   };
